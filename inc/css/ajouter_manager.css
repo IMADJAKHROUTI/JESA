@@ -1,0 +1,130 @@
+div#myModal .modal-backdrop.show {
+    background-color: #00194b87;
+    opacity: 1.5;
+    filter: blur(5px);
+    background-color: #00194b87;
+}
+@media ( min-width: 576px){
+div#myModal .modal-dialog {
+    max-width: 691px;
+    margin: 1.75rem auto;
+}
+}
+
+div#myModal .modal-header.entete_form {
+background-color: #0015ff;
+color: white;
+align-items: center;
+height: 48px;
+border-radius: 0;
+}
+div#myModal {
+padding: 0 !important;
+backdrop-filter: blur(5px);
+}
+
+
+div#myModal button.btn-close.exit_form_action_manager {
+font-size: 1rem;
+}
+
+div#myModal .modal-body.body_form {
+padding: 2rem 1rem 0 1rem;
+margin: 1rem 1rem 1rem 1rem;
+background: white;
+}
+
+div#myModal .modal-content {
+border: none;
+background-color: #e6e6e6;
+overflow: hidden;
+border-radius: 0;
+}
+
+div#myModal .modal-footer.bas_form {
+
+    background-color: white;
+    border-top: 0;
+    margin: 0 0rem 0.5rem 0rem;
+    padding-top: 0;
+    padding-right: 0.3rem;
+
+}
+
+div#myModal input.col-12 {
+height: 40px;
+border: 1px solid #002a871f;
+outline: none;
+border-radius: 5px;
+/* box-shadow: #d2e5fa4e 0 1px 3px 2px; */
+padding:0 10px;
+padding-left: 15px;
+font-weight: 500;
+color: #1253a8;
+background: #fcfdff;
+letter-spacing: 0.3px;
+/* width: 100%; */
+font-size: 13px;
+}
+input:focus{
+    box-shadow: none;
+}
+div#myModal h4.modal-title {
+font-size: 1.2rem;
+}
+
+div#myModal label.label {
+font-size: 15px;
+color: #021e9ca8;
+margin-bottom: 0.3rem;
+font-weight: 600;
+}
+
+div#myModal .form-group.col-md-6.col-sm-12 {
+margin-bottom: 0;
+margin-top: 0;
+}
+div#myModal select.col-12 {
+height: 40px;
+border: 1px solid #002a871f;
+outline: none;
+border-radius: 5px;
+/* box-shadow: #d2e5fa4e 0 1px 3px 2px; */
+padding:0 10px;
+padding-left: 15px;
+font-weight: 500;
+color: #1253a8;
+background: #fcfdff;
+letter-spacing: 0.3px;
+width: 100%;
+}
+div#myModal select.col-12:focus{
+    box-shadow: none;
+}
+div#myModal button.btn.btn-primary {
+background-color: #2684fe;
+color: white;
+font-weight: 500;
+cursor: pointer;
+/* width: 45%; */
+border: none;
+height: 38px;
+border: none;
+font-size: 15px;
+outline: none;
+border-radius: 7px;
+padding: 0.375rem 2rem;
+}
+
+div#myModal button.btn.btn-danger {
+background-color: white;
+color: #017bff;
+font-weight: 500;
+cursor: pointer;
+/* width: 45%; */
+border: 1px solid #017bff;
+height: 38px;
+outline: none;
+border-radius: 7px;
+padding: 0.375rem 2rem;
+}

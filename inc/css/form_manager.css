@@ -1,0 +1,203 @@
+@media ( min-width: 768px){
+    div#exampleModal .modal-dialog {
+        max-width: 768px;
+        margin: 1.75rem auto;
+    }
+}
+    
+    #div#exampleModal .modal-header.entete_form {
+        background-color: #0015ff;
+        color: white;
+        align-items: center;
+        height: 48px;
+        border-radius: 0;
+    }
+    div#exampleModal {
+        padding: 0;
+        backdrop-filter: blur(5px);
+    }
+@media (max-width: 768px) {    
+    
+    div#exampleModal .modal.fade {
+        padding: 0 !important;
+    }
+    div#exampleModal  .modal-body {
+        display: flex;
+        background: white;
+        align-items: center;
+        margin: 1rem;
+        padding: 0;
+    }
+    div#exampleModal  .modal-dialog.modal-dialog-centered .modal-content  .modal-body .row {
+        flex-direction: column;
+    }
+    div#exampleModal   .modal-dialog.modal-dialog-centered .modal-content .modal-body .row .col-md-6 {
+        width: 100%;
+        
+    }
+    div#exampleModal   .modal-dialog.modal-dialog-centered .modal-content  .modal-body .row  .col-md-6 img {
+        height:200px;
+        margin-bottom: 15px;
+    }
+    }
+    
+    div#exampleModal   .modal-dialog.modal-dialog-centered .modal-content {
+        border: none;
+        border-radius: 0;
+        background-color: #e6e6e6;
+    }
+    
+    
+
+    
+    div#exampleModal  .modal-dialog.modal-dialog-centered .modal-content  .modal-header {
+        display: flex;
+        border-radius: 0;
+        align-items: center;
+        background-color: #007bff;
+        color: #fff;
+        height: 50px;
+        border: none;
+    }
+    
+    div#exampleModal   .modal-dialog.modal-dialog-centered .modal-content  .modal-header .modal-title {
+        flex-grow: 1;
+    }
+    
+    div#exampleModal   .modal-dialog.modal-dialog-centered .modal-content  .modal-header .btn-close {
+        color: #fff;
+    }
+    
+    div#exampleModal   .modal-dialog.modal-dialog-centered .modal-content  .modal-body {
+        display: flex;
+        background: white;
+        align-items: center;
+        margin: 1rem;
+    }
+    
+    div#exampleModal  .modal-dialog.modal-dialog-centered .modal-content   .modal-body .row {
+        width: 100%;
+        padding-bottom: 20px;
+        margin: 0;
+    }
+    
+    
+    div#exampleModal   .modal-dialog.modal-dialog-centered .modal-content   .modal-body .row .col-md-6 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    div#exampleModal  .modal-dialog.modal-dialog-centered .modal-content   .modal-body .row .col-md-6 img {
+        height: 244px;
+    }
+    
+    
+    div#exampleModal  .modal-dialog.modal-dialog-centered .modal-content  .modal-body .row .col-md-6 form {
+        padding-top: 23px;
+    }
+    div#exampleModal  .modal-dialog.modal-dialog-centered .modal-content  .modal-body .row .col-md-6 form .div_inpt {
+        padding: 0;
+        position: relative;
+    }
+    div#exampleModal   .modal-dialog.modal-dialog-centered .modal-content  .modal-body .row .col-md-6 form label{
+        height: 24px;
+        display: flex;
+        align-items: center;
+        color: red;
+        font-size: 13px;
+        padding-left: 3px;
+    }
+    
+    div#exampleModal  .modal-dialog.modal-dialog-centered .modal-content  .modal-body .row .col-md-6 form input#btn_submit {
+        background-color: #2684fe;
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+        width: 45%;
+        border: none;
+        height: 38px;
+        border: none;
+        outline: none;
+        border-radius: 7px;
+    }
+    
+    div#exampleModal  .modal-dialog.modal-dialog-centered .modal-content  .modal-body .row .col-md-6 form input.effacer_form_ajout_user {
+        background-color: white;
+        color: #017bff;
+        font-weight: 500;
+        cursor: pointer;
+        width: 45%;
+        border: 1px solid #017bff;
+        height: 38px;
+        outline: none;
+        border-radius: 7px;
+    }
+    
+    div#exampleModal  .modal-dialog.modal-dialog-centered .modal-content  .modal-body .row .col-md-6 form   .div_inpt input {
+        width: 100%;
+        height: 40px;
+        border: 1px solid #002a871f;
+        outline: none;
+        border-radius: 5px;
+        /* box-shadow: #d2e5fa4e 0 1px 3px 2px; */
+        padding: 10px;
+        padding-left: 15px;
+        font-weight: 500;
+        color: #1253a8;
+        background: #fcfdff;
+        letter-spacing: 0.3px;
+        width: 100%;
+        /* margin-bottom: 15px; */
+    }
+    div#exampleModal  .modal-dialog.modal-dialog-centered .modal-content  .modal-body .row .col-md-6 form .div_inpt input::placeholder{
+        color: #b0c3d7;
+    }
+    div#exampleModal   .modal-dialog.modal-dialog-centered .modal-content  .modal-body .row .col-md-6 form .div_inpt i.fa-solid{
+        position: absolute;
+        top: 12px;
+        cursor: pointer;
+        color:#b0c3d7;
+        right: 10px;
+    }
+    div#exampleModal  .modal-dialog.modal-dialog-centered .modal-content  .modal-body .row .col-md-6 form .button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between
+    }
+    
+    div#exampleModal   .modal-dialog.modal-dialog-centered .modal-content  .modal-body .row .col-md-6 form   .effacer_form_ajout_user {
+        margin-right: 10px;
+    } 
+    
+    div#exampleModal  .modal-dialog.modal-dialog-centered .modal-content  .modal-body .row .col-md-6 form   .btn_submit_action_mngr {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 5px 20px;
+        cursor: pointer;
+    }
+    
+    div#exampleModal   .modal-dialog.modal-dialog-centered .modal-content  .modal-body .row .col-md-6 form   .btn_submit_action_mngr:hover {
+        background-color: #0069d9;
+    }
+    
+    div#exampleModal   .modal-dialog.modal-dialog-centered .modal-content  .modal-body .row .col-md-6 form   .inpt_mdps {
+        position: relative;
+    }
+    
+    div#exampleModal   .modal-dialog.modal-dialog-centered .modal-content  .modal-body .row .col-md-6 form .inpt_mdps .fa-eye {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+    
+    div#exampleModal  .modal-dialog.modal-dialog-centered .modal-content  .modal-body .row .col-md-6 form   .inpt_mdps .fa-eye:hover {
+        color: #007bff;
+    }
+    
+    div#exampleModal  .modal-dialog.modal-dialog-centered .modal-content  .modal-body .row .col-md-6 form   .inpt_mdps input[type="password"] {
+        padding-right: 30px;
+    }

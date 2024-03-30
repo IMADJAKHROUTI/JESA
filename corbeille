@@ -1,0 +1,325 @@
+<!-- <?php 
+include("./inc/init.inc.php");
+
+if(isset($_POST['Con'])) {
+    $email = trim($_POST['Email']);
+    $mdps = $_POST['Mdps'];
+    setcookie('login[Email]',$email,time()+60);
+    $rslt1=$pdo->query("select * from admin where Email_admin='$email'");
+    if($rslt1->rowCount()>0) {
+        $rslt1=$pdo->query("select * from admin where Email_admin='$email' and Mdps_admin='$mdps'");
+        if($rslt1->rowCount()>0) {
+            $row=$rslt1->fetch();
+            foreach($row as $indice => $element)
+            {
+                if($indice != 'Mdps_admin')
+                {
+                    $_SESSION['admin'][$indice] = $element; 
+                }
+            }
+            header("location:accueil.php");
+        }
+        else{
+            $_SESSION['erreurMdps'] = "Mot de passe incorrecte";
+            header("location:index.php");
+        }
+    }
+    else{
+        $rslt2=$pdo->query("select * from manager where Email_manager='$email'");
+        if($rslt2->rowCount()>0) {
+            $rslt2=$pdo->query("select * from manager where Email_manager='$email' and Mdps_manager='$mdps'");
+            if($rslt2->rowCount()>0) {
+                $row=$rslt2->fetch();
+                foreach($row as $indice => $element){
+                    if($indice != 'Mdps_manager'){
+                        $_SESSION['manager'][$indice] = $element;
+                    }
+                }
+                header("location:accueil.php");
+            }
+            else{
+                $_SESSION['erreurMdps'] = "Mot de passe incorrecte";
+                header("location:index.php");
+            }
+        }
+        else{
+            setcookie('login[Email]',$email,time()-1);
+            $_SESSION['erreurEmail'] = "Email incorrecte";
+            header("location:index.php");
+        }
+    }
+}
+elseif(isset($_GET['déconnexion'])){
+    session_start(); 
+    $_SESSION = array();
+    setcookie(session_name(), ' ', time()-1);
+    session_destroy();
+    header('location:index.php');
+}
+else echo "erreru";
+?> -->
+
+<?php 
+include("./inc/init.inc.php");
+include("./inc/head.inc.html");
+?>
+    <header class="index">
+        <div class='logo'>
+            <img src='./inc/img/logo_jesa.png' alt=''>
+        </div>
+    </header>
+    <main class="index">
+        <section class='login'>
+            <div class='div_left'>
+               <div class='border'>
+                    <div class='entete_login'>
+                        <p>Bienvenue</p>
+                    </div>
+                    <form action='controller.php' method='post' name='login'>
+                        <div class='content'>
+                            <div class='inpt_text'>
+                                <label for=''>Email</label>
+                                <input type='text' name='Email' value="<?php if(isset($_COOKIE['login']['Email'])) echo $_COOKIE['login']['Email']; ?>" placeholder='algolus@gmail.com'>
+                                <span>
+                                <?php
+                                if(isset($_SESSION['erreurEmail'])){
+                                    echo $_SESSION['erreurEmail'];
+                                    unset($_SESSION['erreurEmail']);
+                                }
+                                 ?>
+                                </span>
+                            </div>
+                            <div class='inpt_text'>
+                                <label for=''>Mot de passe</label>
+                                <input type='password' name='Mdps' placeholder='**********'>
+                                <span><?php
+                                if(isset($_SESSION['erreurMdps'])){
+                                    echo" $_SESSION[erreurMdps]";
+                                    unset($_SESSION['erreurMdps']);
+                                }                                  
+                                 ?></span>
+                            </div>
+                            <div class='connexion'>
+                                <input type='submit' name='Con' value='se conecter'>
+                                <span>
+                                <?php
+                                if(isset($_SESSION['erreurlog'])){
+                                    echo "$_SESSION[erreurlog]";
+                                    unset($_SESSION['erreurlog']);
+                                }
+                                 ?>
+                                </span>
+                            </div>                           
+                        </div>
+                    </form>
+               </div>
+            </div>
+            <div class='div_right'>
+                <img src='./inc/img/Dashboard.png' alt=''>
+            </div>
+        </section>
+    </main>
+<?php 
+include("./inc/bas.inc.html");
+?>
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@100;300;400;700;900&family=Lexend+Deca:wght@100;200;400;500;600;700;800;900&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+    /* font-family: 'Lato', sans-serif; */
+
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+header.index{
+    height: 90px;
+    box-shadow: 0px 0px 4px 1px #b9b9b9;
+}
+header.index .logo {
+    width: 410px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+header.index .logo img{
+    width: 180px;
+}
+main.index{
+    min-height: calc(100vh - 90px);
+    display: flex;
+    width: 100%;
+}
+
+main.index section.login{
+    display: flex;
+    height: 100%;
+}
+main.index section.login .div_left{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* padding-bottom: 29px; */
+}
+main.index section.login .div_left .border{
+    width: 60%;
+    height: 63%;
+    padding: 33px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 8px 0px #2d65d6;
+    margin-left: 50px;
+}
+main.index section.login .div_left .entete_login p{
+    font-weight: 900;
+    font-size: 1.9rem;
+    color: rgb(0, 42, 110);
+
+}
+main.index section.login .div_left form{
+    display: flex;
+    width: 80%;
+    height: 80%;
+}
+
+main.index section.login .div_left form .content {
+    width: 100%;
+}
+main.index section.login .div_left form .content div span{
+    color: red;
+    font-size: 0.75rem;
+    height: 17px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+main.index section.login .div_left form .content .inpt_text{
+    display: flex; 
+    flex-direction: column;
+}
+main.index section.login .div_left form .content .inpt_text label{
+    font-weight: 700;
+    font-size: 16px;
+    color: #304878;
+}
+main.index section.login .div_left form .content .inpt_text input{
+    width: 100%;
+    height: 35px;
+    padding-left: 5px;
+    border: 2px solid #a7c5ff;
+    outline: none;
+}
+main.index section.login .div_left form .content .inpt_text input::placeholder{
+    color: rgb(111, 124, 137);
+}
+main.index section.login .div_left form .content .connexion input{
+    background-color: #3e60d9;
+    color: white;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+main.index section.login  .div_right{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+}
+main.index section.login  .div_right img{
+    width: 100%;
+    
+}
+
+
+
+if (isset($_POST['jeton']) && $_POST['jeton'] == $_SESSION['jeton']) {
+    switch ($_POST['action']) {
+        case 'supprimer_manager':
+            $id_manager = $_POST['Id_manager'];
+            $stmt = $pdo->prepare("DELETE FROM manager WHERE Id_manager = ?");
+            $stmt->execute([$id_manager]);
+            header("location: compte.php");
+            exit;
+            break;
+
+        case 'modifier_manager':
+            $id_manager = $_POST['Id_manager'];
+            $nom_manager = $_POST['Nom_manager'];
+            $email_manager = $_POST['Email_manager'];
+            $mdps_manager = $_POST['Mdps_manager'];
+            $stmt = $pdo->prepare("UPDATE manager SET Nom_manager = ?, Email_manager = ?, Mdps_manager = ? WHERE manager.Id_manager = ?");
+            $stmt->execute([$nom_manager, $email_manager, $mdps_manager, $id_manager]);
+            break;
+
+        case 'ajouter_manager':
+            $id_manager = $_POST['Id_manager'];
+            $nom_manager = $_POST['Nom_manager'];
+            $email_manager = $_POST['Email_manager'];
+            $mdps_manager = $_POST['Mdps_manager'];
+            $stmt=$pdo->prepare("INSERT INTO manager value (?,'1',?,?,?)");
+            $stmt->execute([$id_manager,$nom_manager,$email_manager,$mdps_manager]);
+            header("location: compte.php");
+            exit;
+            break;
+
+        default:
+            // Action non reconnue ou non spécifiée
+            break;
+    }
+
+    <?php 
+    if (isset($_POST['jeton']) && $_POST['jeton'] == $_SESSION['jeton']) {
+        if (isset($_POST['action']) && $_POST['action'] == 'supprimer_manager') {
+            $id_manager = $_POST['Id_manager'];
+            $stmt = $pdo->prepare("DELETE FROM manager WHERE Id_manager = ?");
+            $stmt->execute([$id_manager]);
+            header("location: compte.php");
+            exit;
+        }
+        if (isset($_POST['action']) && $_POST['action'] == 'modifier_manager') {
+            $id_manager = $_POST['Id_manager'];
+            $nom_manager = $_POST['Nom_manager'];
+            $email_manager = $_POST['Email_manager'];
+            $mdps_manager = $_POST['Mdps_manager'];
+            $stmt = $pdo->prepare("UPDATE manager SET Nom_manager = ?, Email_manager = ?, Mdps_manager = ? WHERE manager.Id_manager = ?");
+            $stmt->execute([$nom_manager, $email_manager, $mdps_manager, $id_manager]);
+            
+        }
+        if(isset($_POST['action']) && $_POST['action']=='ajouter_manager'){
+            $id_manager = $_POST['Id_manager'];
+            $nom_manager = $_POST['Nom_manager'];
+            $email_manager = $_POST['Email_manager'];
+            $mdps_manager = $_POST['Mdps_manager'];
+            $stmt=$pdo->prepare("INSERT INTO manager value (?,'1',?,?,?)");
+            $stmt->execute([$id_manager,$nom_manager,$email_manager,$mdps_manager]);
+            header("location: compte.php");
+            exit;
+        }
+    }
+    
+    
+    ?>
